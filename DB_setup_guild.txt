@@ -1,0 +1,48 @@
+Docker password:
+...
+
+sudo service tomcat10 stop
+sudo docker run --add-host host.docker.internal:host-gateway -p 8080:8080 lorrainnn/p5:v1
+
+Database Setup:
+1. createtable.sql 
+sudo mysql
+CREATE USER 'mytestuser'@'localhost' IDENTIFIED BY 'My6$Password';
+GRANT ALL PRIVILEGES ON * . * TO 'mytestuser'@'localhost';
+
+cd sql
+mysql -u mytestuser -p -e "show databases;"
+mysql -u mytestuser -p < createtable.sql
+mysql -u mytestuser -p -e "SET GLOBAL autocommit = 0;"
+
+2. loaddata.sql 
+Modify script: First modify the movie-data.sql script by adding the following statement at the end of script:
+COMMIT;
+
+mysql -u mytestuser -p --database=moviedb < movie-data.sql
+mysql -u mytestuser -p -e "COMMIT; SET GLOBAL autocommit = 1;"
+
+3. 加price 
+mysql -u mytestuser -p
+USE moviedb;
+ALTER TABLE movies ADD COLUMN price DECIMAL(10, 2) NOT NULL DEFAULT 0.00;
+UPDATE movies SET price = ROUND(5 + RAND() * 45, 2);
+ALTER TABLE sales ADD COLUMN quantity INT NOT NULL DEFAULT 1;
+
+4. insert employee
+INSERT INTO employees (email, password, fullname) 
+VALUES ('classta@email.edu', 'classta', 'TA CS122B');
+
+5. Add stored procedure 
+mysql -u mytestuser -p --database=moviedb < stored-procedure.sql
+
+6. add fulltext search
+alter table movies add fulltext(title);
+
+
+Project maven compile:
+inside your repo, where the pom.xml file locates, build the war file:
+mvn package
+ls -lah /var/lib/tomcat10/webapps/
+sudo cp ./target/*.war /var/lib/tomcat10/webapps/
+ls -lah /var/lib/tomcat10/webapps/
