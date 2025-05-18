@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <title>Fablix Cart</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">MovieDatabase</a>
+        <a class="btn btn-primary m-1" href="movielist.html">Continue Shopping</a>
+    </nav>
+
+
+    <h1>Shopping Cart</h1>
+
+    <div class="table-responsive">
+        <table id="cartTable" class="table table-striped">
+            <thead>
+            <tr>
+                <th>Movie Title</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+
+        </table>
+    </div>
+
+    <p>Total Price: <span id="totalPrice">0.00</span></p>
+
+    <button id="proceedToPayment" onclick="window.location.href='payment.html'">
+        Proceed to Payment
+    </button>
+
+    <!-- include your own JS file -->
+    <script src='https://code.jquery.com/jquery-3.1.0.min.js'></script>
+    <script type='text/javascript' src='cart.js'></script>
+
+</body>
+</html>

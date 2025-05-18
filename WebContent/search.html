@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+    <!-- <link rel="stylesheet" href="http://jqueryui.com/resources/demos/style.css"> -->
+
+
+    <title>Search Movies</title>
+
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html" onclick="clearSession()">MovieDatabase</a>
+        <a class="btn btn-warning" href="cart.html">Checkout</a>
+    </nav>
+
+    <h2>Search Movies</h2>
+    <form id="searchForm">
+<!--        <div class="form-group">-->
+<!--            <input type="text" id="title" class="autocomplete-searchbox form-control" placeholder="common.parser.Movie Title">-->
+<!--        </div>-->
+<!--        <div class="form-group">-->
+            <input type="text" id="year" placeholder="Year">
+<!--        </div>-->
+<!--        <div class="form-group">-->
+            <input type="text" id="director" placeholder="Director">
+<!--        </div>-->
+<!--        <div class="form-group">-->
+            <input type="text" id="star_name" placeholder="Star Name">
+<!--        </div>-->
+            <button type="button" id="searchButton">Search</button>
+            <input type="text" id="title" class="autocomplete-searchbox form-control" placeholder="Movie Title">
+<!--      <button type="button" id="searchButton">Search</button>-->
+    </form>
+
+    <script src='https://code.jquery.com/jquery-3.1.0.min.js'></script>
+    <!-- include jquery autocomplete JS  -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.devbridge-autocomplete/1.4.11/jquery.autocomplete.min.js"></script> -->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type='text/javascript' src='search.js'></script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Fabflix Dashboard</title>
+    <script src='https://code.jquery.com/jquery-3.1.0.min.js'></script>
+    <script type='text/javascript' src='dashboard.js'></script>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1>Fabflix Employee Dashboard</h1>
+<!--    <button class="btn btn-warning m-1" onclick="logout()">Logout</button>-->
+    <button class="btn btn-warning m-1" id="logoutButton">Logout</button>
+    <h2>Database Metadata</h2>
+    <button id="getMetadata">Show Database Metadata</button>
+    <button id="hideMetadata" style="display: none;">Hide Database Metadata</button>
+    <div id="metadata"></div>
+
+    <h2>Add a New Movie</h2>
+    <form id="addMovieForm">
+        Title: <input type="text" id="title" required><br>
+        Year: <input type="number" id="year" required><br>
+        Director: <input type="text" id="director" required><br>
+        Star: <input type="text" id="star" required><br>
+        Genre: <input type="text" id="genre" required><br>
+        <button type="button" onclick="submitAddMovieForm()" id="submitMovie">Add Movie</button>
+    </form>
+    <div id="add-movie-message"></div>
+
+    <h2>Add a New Star</h2>
+    <form id="addStarForm">
+        Star Name: <input type="text" id="star_name" required><br>
+        Birth Year (optional): <input type="number" id="star_birth_year" min="1800" max="2099"><br>
+        <button type="button" onclick="submitAddStarForm()" id="submitStar">Add Star</button>
+    </form>
+    <p id="add-star-message"></p>
+
+</body>
+</html>

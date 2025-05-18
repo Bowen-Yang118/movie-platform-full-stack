@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fablix Home Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html" onclick="clearSession()">MovieDatabase</a>
+        <a class="btn btn-warning" href="cart.html">Checkout</a>
+    </nav>
+
+    <h1>Welcome!</h1>
+
+    <button onclick="window.location.href='search.html'">
+        Search
+    </button>
+
+    <button onclick="window.location.href='browse_title.html'">
+        Browse By Title
+    </button>
+
+    <button onclick="window.location.href='browse_genre.html'">
+        Browse By Genre
+    </button>
+
+    <button onclick="window.location.href='dashboard_login.html'">
+        Dashboard
+    </button>
+</body>
+
+</html>
